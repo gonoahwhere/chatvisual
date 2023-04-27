@@ -1,2 +1,2 @@
 # chatvisual
-need a way to distinguish staff from players?
+Need a way to distinguish staff from players? 
