@@ -24,8 +24,14 @@ minetest.register_on_mods_loaded(function()
                 end
             end
 
-            if (receiver ~= name or (tonumber(vtable[1]) > 0 or tonumber(vtable[2]) > 4 or tonumber(vtable[3]) >= 15)) and not ignore.get_ignore(name, receiver) then
-                minetest.chat_send_player(receiver, ("%s%s: %s"):format(rankChosen, name, message))
+            if ingore then
+                if (receiver ~= name or (tonumber(vtable[1]) > 0 or tonumber(vtable[2]) > 4 or tonumber(vtable[3]) >= 15)) and not ignore.get_ignore(name, receiver) then
+                    minetest.chat_send_player(receiver, ("%s%s: %s"):format(rankChosen, name, message))
+                end
+            else
+                if (receiver ~= name or (tonumber(vtable[1]) > 0 or tonumber(vtable[2]) > 4 or tonumber(vtable[3]) >= 15)) then
+                    minetest.chat_send_player(receiver, ("%s%s: %s"):format(rankChosen, name, message))
+                end
             end
         end
 
